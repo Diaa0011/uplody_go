@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Uploady API",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd/api/main.go",
+            "cwd": "${workspaceFolder}", // This is the fix! It forces Go to "stand" in ~/uploady
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
