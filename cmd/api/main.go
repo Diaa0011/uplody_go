@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"uploadyPack/handlersv1"
+	handlersv1 "uploadyPack/handlers/v1"
 )
 
 func main() {
