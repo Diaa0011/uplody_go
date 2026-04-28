@@ -1,4 +1,4 @@
-package handlers
+package handlersv1
 
 import (
 	"fmt"
@@ -11,8 +11,14 @@ import (
 )
 
 func FileUploadHandler(w http.ResponseWriter, r *http.Request) {
-	//Limit file size to 10MB
-	r.ParseMultipartForm(10 << 20)
+
+	r.Body = http.MaxBytesReader(w, r.Body, 10<<30)
+
+	err := r.ParseMultipartForm(10 << 20)
+
+	if err != nil {
+		http.Error(w, "File too large", http.StatusRequestEntityTooLarge)
+	}
 
 	//Retrieve the file from data
 	file, handler, err := r.FormFile("textfile")
