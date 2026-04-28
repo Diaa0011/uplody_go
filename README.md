@@ -10,3 +10,9 @@
 
 ## Future work for this part:
 after finishing v2 based on medium article will start on letting aws handle uploading chunks
+
+
+
+## open personal questions for serach 
+why usage of buffering?
+handling channels in ChunkLargeFiles blueprint (how it is organized)
